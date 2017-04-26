@@ -1,0 +1,71 @@
+.mui-flash
+  position: relative;
+  z-index: 1011;
+  &.mui-flash-top
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-height: 25vh;
+    overflow: hidden;
+    .inner
+      max-height: 25vh;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding-right: 30px;
+      margin-right: -30px;
+    .mui-flash-message
+      box-shadow: 1px -1px 3px rgba(0, 0, 0, 0.2);
+      width: 100%;
+  &.mui-flash-bottomright
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    max-height: 50vh;
+    overflow: hidden;
+    .inner
+      max-height: 50vh;
+      overflow-x: hidden;
+      overflow-y: auto;
+      padding-right: 30px;
+      margin-right: -30px;
+    .mui-flash-message
+      border-radius: 3px;
+      margin-bottom: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    @media screen and (max-width: 992px)
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      max-height: 25vh;
+      overflow: hidden;
+      .inner
+        max-height: 25vh;
+      .mui-flash-message
+        border-radius: 0;
+        margin-bottom: 2px;
+  .mui-flash-message
+    transition: all .2s ease;
+    padding: 20px 15%;
+    display: flex;
+    color: $white;
+    border: 0;
+    .mui-flash-message-title
+      flex-grow: 2;
+    .mui-flash-message-hide
+      flex-shrink: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    &.fade-out
+      transform: translateX(100vw);
+      opacity: 0;
+    &.success
+      background-color: $green;
+    &.danger
+      background-color: $red;
+    &.info
+      background-color: $blue;
